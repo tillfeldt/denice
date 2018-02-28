@@ -11,8 +11,15 @@ h1{
   font-size: 40px;
   letter-spacing: 2px;
   margin-bottom: 0px;
+  font-family: arial;
 }
-
+h2{
+  font-weight: lighter;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  font-family: arial;
+}
 .inputSection {
   margin: 50px 0px 80px 0px;
   width: 400px;
