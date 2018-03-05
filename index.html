@@ -1,4 +1,8 @@
 <!doctype html>
+</script>
+</body>
+</html>
+
 <html lang=en>
   <head>
     <meta charset=utf-8>
@@ -7,35 +11,45 @@
     <style type="text/css">
 <!--
 body {
-background-color: #E5E5E5;
+background-color: #white;
 }
 -->
 </style>
-  </head>
-  <body>
-    <h1>Denice</h1>
-    <h2>Tillfeldt</h2>
-    <div class="inputSection">
-      <div class="inputs">
-        <input placeholder="Let's go!"></input>
-      </div>
-      <button class="add0ption">KBK</button>
-    </div>
-    <div class="resultSection"></div>
-    <button>Go crazy!</button>
+</head>
+<body>
+<h1>Denice</h1>
+<h2>Tillfeldt</h2>
+<div class="inputSection">
+  <div class="inputs">
+    <input placeholder="Skriv något vettja"></input>
+  </div>
+  <button class="addOption">KBK</button>
+</div>
+<div class="resultSection"></div>
+<button class="submit">Go crazy!</button>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-      $(function() {
-        $('.resultSection').hide()
-
-        var add_option = function() {
-          $('.inputs').append('<input></input>')
-        }
-
-        $('.add0ption').click(add_option)
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+  $(function() {
+    $('.resultSection').hide()
+    var add_option = function() {
+      $('.inputs').append('<input></input>')
+    }
+    $('.addOption').click(add_option)
+    var options = []
+    var submit = function() {
+      $('.inputSection').hide()
+      $('.resultSection').css('display', 'flex')
+      $('input').each(function() {
+        options.push($(this).val())
       })
-    </script>
+      var winner = options[Math.floor(Math.random() * options.length)]
+      console.log(winner)
+      $('.resultSection').text(winner)
+    }
+    $('.submit').click(submit)
+  })
+</script>
 <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/12804624_10201405623900431_5544421352543958166_n.jpg?oh=1a47c505b1f83763dc247c6d3d4eb8c6&oe=5B147775" width="200"
   </body>
 </html>
